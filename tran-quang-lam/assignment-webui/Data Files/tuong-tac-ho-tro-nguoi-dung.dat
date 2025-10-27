@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>tuong-tac-ho-tro-nguoi-dung</name>
+   <tag></tag>
+   <connectionProperties/>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>f0d45702-57cc-47c3-8909-4103e88dcba1</dataFileGUID>
+   <dataSourceUrl>D:\katalon\assignment\tran-quang-lam\assignment-webui\Data Files\Excel files\tuong-tac-ho-tro-nguoi-dung.xlsx</dataSourceUrl>
+   <driver>ExcelFile</driver>
+   <isInternalPath>false</isInternalPath>
+   <query></query>
+   <secureUserAccount>false</secureUserAccount>
+   <sheetName>tuong-tac-ho-tro-nguoi-dung</sheetName>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>

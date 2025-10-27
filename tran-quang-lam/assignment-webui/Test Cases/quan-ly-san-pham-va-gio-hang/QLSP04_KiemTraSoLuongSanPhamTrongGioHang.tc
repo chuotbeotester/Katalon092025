@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>QLSP04_KiemTraSoLuongSanPhamTrongGioHang</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>c081ab66-ce07-47c8-a982-2295334efef5</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>QLSP06_XemDanhSachSanPham</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>8b1a1486-b324-4b32-b620-a197a20f245a</testCaseGuid>
+</TestCaseEntity>

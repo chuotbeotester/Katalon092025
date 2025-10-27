@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>QLSP05_LoaiSanPhamKhoiGioHang</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>16249e92-5b1d-485a-8444-648dfc06c910</testCaseGuid>
+</TestCaseEntity>
