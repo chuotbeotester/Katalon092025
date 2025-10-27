@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>QLSP02_TimKiemSanPham</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>218c1957-de27-42e5-9e51-051a3812523c</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>b2c5ada9-cafe-4333-8668-1ac5d206239f</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>b2c5ada9-cafe-4333-8668-1ac5d206239f</id>
+      <masked>false</masked>
+      <name>searchSanPham</name>
+   </variable>
+</TestCaseEntity>
