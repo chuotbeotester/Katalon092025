@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSuiteEntity>
+   <description></description>
+   <name>TS03_QuanLySanPhamVaGioHang</name>
+   <tag></tag>
+   <isRerun>false</isRerun>
+   <mailRecipient></mailRecipient>
+   <numberOfRerun>0</numberOfRerun>
+   <pageLoadTimeout>10</pageLoadTimeout>
+   <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
+   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <rerunImmediately>true</rerunImmediately>
+   <testSuiteGuid>22731e99-1855-447c-a6a4-48adfb648283</testSuiteGuid>
+   <testCaseLink>
+      <guid>a05d1a40-cdf1-4985-a5f8-80bb7092b2cf</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/quan-ly-san-pham-va-gio-hang/QLSP01_verifyAllProductsVaProductDetail</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>dfc4d345-5980-4894-8824-acb118612a6e</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/quan-ly-san-pham-va-gio-hang/QLSP02_TimKiemSanPham</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>59417b11-81e4-4638-8518-710d03bcc936</id>
+         <iterationEntity>
+            <iterationType>RANGE</iterationType>
+            <value>2-2</value>
+         </iterationEntity>
+         <testDataId>Data Files/quan-ly-san-pham-va-gio-hang</testDataId>
+      </testDataLink>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId>59417b11-81e4-4638-8518-710d03bcc936</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>searchName</value>
+         <variableId>ee33b45b-d8ae-4f77-808f-03044344ee4f</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>59417b11-81e4-4638-8518-710d03bcc936</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>productName</value>
+         <variableId>325dddac-7de3-46d3-aefa-642a13de7810</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>877a574a-cb42-464c-b7b8-a865bb7f9ffc</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/quan-ly-san-pham-va-gio-hang/QLSP03_ThemSanPhamVaoGioHang</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>52b869fe-4796-40e0-a5a5-719d4c3b3144</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/quan-ly-san-pham-va-gio-hang/QLSP04_KiemTraSoLuongSanPhamTrongGioHang</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>1e3e8014-529f-48a3-928a-50add4736943</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/quan-ly-san-pham-va-gio-hang/QLSP05_LoaiSanPhamKhoiGioHang</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>c9170da4-7511-40ed-8eff-ea7acff2fbc5</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/quan-ly-san-pham-va-gio-hang/QLSP06_XemDanhSachSanPham</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>d3bad218-367f-4b55-8807-c32deee1da36</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/quan-ly-san-pham-va-gio-hang/QLSP07_XemNhanHieuSanPham</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>5a27587f-5125-4dcc-ab35-82ea6cdd68e5</id>
+         <iterationEntity>
+            <iterationType>RANGE</iterationType>
+            <value>7-7</value>
+         </iterationEntity>
+         <testDataId>Data Files/quan-ly-san-pham-va-gio-hang</testDataId>
+      </testDataLink>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId>5a27587f-5125-4dcc-ab35-82ea6cdd68e5</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>brand</value>
+         <variableId>f152c945-9b21-45c2-8f2c-7cc4b3fb021c</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>5a27587f-5125-4dcc-ab35-82ea6cdd68e5</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>brand2</value>
+         <variableId>6e44410a-5891-4e1c-adc5-e80b75e0b668</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>9dd08fae-d1b5-455d-9427-28970a8d4e63</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/quan-ly-san-pham-va-gio-hang/QLSP08_TimKiemSanPhamVaVerifyGioHangSauKhiDangNhap</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>435b2155-fedb-404a-a428-d80ad35ec7fe</id>
+         <iterationEntity>
+            <iterationType>RANGE</iterationType>
+            <value>8-8</value>
+         </iterationEntity>
+         <testDataId>Data Files/quan-ly-san-pham-va-gio-hang</testDataId>
+      </testDataLink>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId>435b2155-fedb-404a-a428-d80ad35ec7fe</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>searchName</value>
+         <variableId>ef8cc913-0e7d-4502-809c-b941489f12ae</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>435b2155-fedb-404a-a428-d80ad35ec7fe</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>productName</value>
+         <variableId>73624f2b-676c-43fb-92d4-df59e9aa6dd1</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>435b2155-fedb-404a-a428-d80ad35ec7fe</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>email</value>
+         <variableId>ebee7a07-133b-476e-acb5-fc803baed699</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>435b2155-fedb-404a-a428-d80ad35ec7fe</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>password</value>
+         <variableId>5ea6a4be-2632-4470-9f1e-0b72b35eb55b</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>52a1277b-b5ab-4ccc-8cc7-2ba7a0a5bdc1</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/quan-ly-san-pham-va-gio-hang/QLSP09_ThemGioHangTuSanPhamDeXuat</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>fb8627f0-ba8a-4ec8-b4bd-1009c4e4f3f7</id>
+         <iterationEntity>
+            <iterationType>RANGE</iterationType>
+            <value>9-9</value>
+         </iterationEntity>
+         <testDataId>Data Files/quan-ly-san-pham-va-gio-hang</testDataId>
+      </testDataLink>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId>fb8627f0-ba8a-4ec8-b4bd-1009c4e4f3f7</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>product</value>
+         <variableId>741b7c16-ad19-48df-ab7e-789aadc9bd3e</variableId>
+      </variableLink>
+   </testCaseLink>
+</TestSuiteEntity>

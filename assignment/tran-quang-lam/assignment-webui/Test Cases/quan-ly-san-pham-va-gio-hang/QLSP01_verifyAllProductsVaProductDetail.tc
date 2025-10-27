@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>QLSP01_verifyAllProductsVaProductDetail</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>d010814b-6067-48a7-bd79-34a58e4ada7a</testCaseGuid>
+</TestCaseEntity>

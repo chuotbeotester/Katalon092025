@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>QLSP07_XemNhanHieuSanPham</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>798ef6d8-7aec-4b61-96a9-324493317e2f</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>f152c945-9b21-45c2-8f2c-7cc4b3fb021c</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>6e44410a-5891-4e1c-adc5-e80b75e0b668</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>f152c945-9b21-45c2-8f2c-7cc4b3fb021c</id>
+      <masked>false</masked>
+      <name>brand</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>6e44410a-5891-4e1c-adc5-e80b75e0b668</id>
+      <masked>false</masked>
+      <name>brand2</name>
+   </variable>
+</TestCaseEntity>
