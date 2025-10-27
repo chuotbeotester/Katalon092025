@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>QLSP07_TimKiemSanPhamGioHangDangNhap</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>5382c19a-df40-406a-8cb0-babbaf9f7dc4</testCaseGuid>
+</TestCaseEntity>

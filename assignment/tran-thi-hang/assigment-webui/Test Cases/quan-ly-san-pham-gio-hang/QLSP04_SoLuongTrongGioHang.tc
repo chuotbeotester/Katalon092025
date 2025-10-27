@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>QLSP04_SoLuongTrongGioHang</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>fa917275-2713-4908-8b0c-99a3d1d20b0e</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>1eff158b-9148-438d-97a4-de8f4b647ef0</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>1eff158b-9148-438d-97a4-de8f4b647ef0</id>
+      <masked>false</masked>
+      <name>productQuantity</name>
+   </variable>
+</TestCaseEntity>

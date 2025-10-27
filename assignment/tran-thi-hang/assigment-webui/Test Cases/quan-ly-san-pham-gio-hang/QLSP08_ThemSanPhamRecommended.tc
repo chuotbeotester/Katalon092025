@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>QLSP08_ThemSanPhamRecommended</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>e080a551-59d2-49ba-8910-f565744a088d</testCaseGuid>
+</TestCaseEntity>
