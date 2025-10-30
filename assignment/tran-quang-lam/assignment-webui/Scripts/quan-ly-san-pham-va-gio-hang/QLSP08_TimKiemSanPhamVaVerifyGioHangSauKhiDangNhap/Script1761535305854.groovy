@@ -14,7 +14,9 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
+import internal.GlobalVariable
+import keyword.HelperKeywords
+
 import org.openqa.selenium.Keys
 import org.openqa.selenium.WebElement
 
@@ -36,11 +38,9 @@ String txtSearchedProducts=WebUI.getText(findTestObject('quan-ly-san-pham-va-gio
 assert txtSearchedProducts.equals('SEARCHED PRODUCTS')
 
 'Các sản phẩm liên quan được hiển thị thành công'
-String productNameList=findTestData('quan-ly-san-pham-va-gio-hang').getValue('productName', 8)
-def  expectedProducts=productNameList.split(',').collect { it.trim() }
-for(String products: expectedProducts) {
-	String txtProductName=WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang/txtSearchProductsName',[('productName'):products]))
-	assert txtProductName.contains(searchName)
+List<WebElement> lstNameProducts=WebUI.findWebElements(findTestObject('quan-ly-san-pham-va-gio-hang/txtNameProducts'), 0)
+for(WebElement products: lstNameProducts) {
+	HelperKeywords.verifyTextContains(products, searchName)
 }
 
 'Thêm tất cả sản phẩm vào giỏ hàng'
@@ -56,9 +56,7 @@ WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aViewCart'))
 'Các sản phẩm đều được thêm vào giỏ hàng'
 List<WebElement> lstCartDescription=WebUI.findWebElements(findTestObject('quan-ly-san-pham-va-gio-hang/txtCartDescription'), 10)
 for(WebElement element:lstCartDescription) {
-	String txtCartDescription = element.getText()
-	WebUI.comment('Tên của sản phẩm:'+txtCartDescription)
-	assert txtCartDescription.contains(searchName)
+	HelperKeywords.verifyTextContains(element, searchName)
 }
 
 'Click nút Signup/Login'
@@ -75,7 +73,5 @@ WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aViewCart'))
 'Tất cả sản phẩm được hiển thị sau khi đăng nhập'
 List<WebElement> lstCartDescriptionLogin=WebUI.findWebElements(findTestObject('quan-ly-san-pham-va-gio-hang/txtCartDescription'), 10)
 for(WebElement element:lstCartDescriptionLogin) {
-	String txtCartDescriptionLogin = element.getText()
-	WebUI.comment('Tên của sản phẩm:'+txtCartDescriptionLogin)
-	assert txtCartDescriptionLogin.contains(searchName)
+	HelperKeywords.verifyTextContains(element, searchName)
 }
