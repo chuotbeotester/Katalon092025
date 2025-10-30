@@ -15,30 +15,28 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable
+import keyword.DangKy
+import keyword.DeleteAccount
 import keyword.HelperKeywords
+import keyword.ThanhToan
+import keyword.ThemSanPhamVaoGioHang
 
 import org.openqa.selenium.Keys as Keys
 
-'Click vào Products'
-WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aProducts'))
+'Click nút Signup/Login'
+WebUI.click(findTestObject('dat-hang-va-thanh-toan/btnSignupLogin'))
 
-'Verify điều hướng đến trang ALL PRODUCTS'
-String txtAllProducts=WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang/txtAllProducts'))
-assert txtAllProducts.equals('ALL PRODUCTS')
+'Điền tất cả thông tin trong signup và tạo mới tài khoản'
+DangKy.signup(name, email, password, days, months, years, firstName, lastName, company, address1, address2, country, state, city, zipcode, mobileNumber)
 
-'Nhập tên sản phẩm lên ô input'
-WebUI.setText(findTestObject('quan-ly-san-pham-va-gio-hang/iptSearchProduct'), searchName)
+'Thêm sản phẩm vào giỏ hàng'
+ThemSanPhamVaoGioHang.addProductToCart(product)
 
-'Click nút tìm kiếm'
-WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/btnSearch'))
+'Làm các bước để thanh toán'
+ThanhToan.pay(comment,  nameOnCard,  cardNumber,  cvc,  expiryMonth, expiryYear)
 
-'SEARCHED PRODUCTS hiển thị thành công'
-String txtSearchedProducts=WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang/txtSearchedProducts'))
-assert txtSearchedProducts.equals('SEARCHED PRODUCTS')
+'Thực hiện delete account'
+DeleteAccount.accountDelete()
 
-'Các sản phẩm liên quan được hiển thị thành công'
-String productNameList=findTestData('quan-ly-san-pham-va-gio-hang').getValue('productName', 2)
-def  expectedProducts=productNameList.split(',').collect { it.trim() }
-for(String products: expectedProducts) {
-	HelperKeywords.verifyTextContains(findTestObject('quan-ly-san-pham-va-gio-hang/txtSearchProductsName',[('productName'):products]), searchName)
-}
+'Click nút Continue'
+WebUI.click(findTestObject('dat-hang-va-thanh-toan/btnContinue'))

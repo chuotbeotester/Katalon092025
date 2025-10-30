@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DataFileEntity>
    <description></description>
-   <name>tuong-tac-ho-tro-nguoi-dung</name>
+   <name>dat-hang-va-thanh-toan</name>
    <tag></tag>
    <connectionProperties/>
    <containsHeaders>true</containsHeaders>
    <csvSeperator></csvSeperator>
-   <dataFileGUID>f0d45702-57cc-47c3-8909-4103e88dcba1</dataFileGUID>
-   <dataSourceUrl>Data Files/Excel files/tuong-tac-ho-tro-nguoi-dung.xlsx</dataSourceUrl>
+   <dataFileGUID>63af2aac-e269-4e70-b946-28647c8b4d8e</dataFileGUID>
+   <dataSourceUrl>Data Files/Excel files/dat-hang-va-thanh-toan.xlsx</dataSourceUrl>
    <driver>ExcelFile</driver>
    <isInternalPath>true</isInternalPath>
    <query></query>
    <secureUserAccount>false</secureUserAccount>
-   <sheetName>tuong-tac-ho-tro-nguoi-dung</sheetName>
+   <sheetName>dat-hang-va-thanh-toan</sheetName>
    <usingGlobalDBSetting>false</usingGlobalDBSetting>
 </DataFileEntity>

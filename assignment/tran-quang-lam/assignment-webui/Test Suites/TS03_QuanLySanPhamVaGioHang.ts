@@ -70,7 +70,7 @@
    <testCaseLink>
       <guid>c9170da4-7511-40ed-8eff-ea7acff2fbc5</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/quan-ly-san-pham-va-gio-hang/QLSP06_XemDanhSachSanPham</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
@@ -105,7 +105,7 @@
    <testCaseLink>
       <guid>9dd08fae-d1b5-455d-9427-28970a8d4e63</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/quan-ly-san-pham-va-gio-hang/QLSP08_TimKiemSanPhamVaVerifyGioHangSauKhiDangNhap</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
