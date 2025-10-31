@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//h2[normalize-space()='Searched Products']</value>
+         <value>//h2[text()='Searched Products']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

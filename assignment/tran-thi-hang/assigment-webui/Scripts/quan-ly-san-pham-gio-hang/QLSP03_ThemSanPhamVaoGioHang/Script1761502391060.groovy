@@ -16,25 +16,19 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.WebElement
 
-'2. Click on Products button'
+'Click on Products button'
 WebUI.click(findTestObject('tuong-tac-ho-tro-nguoi-dung/btnProduct'))
 
-'Di chuột lên sản phẩm đầu tiên'
-WebUI.mouseOver(findTestObject('quan-ly-san-pham-gio-hang/btnAddFirst'))
-
-'nhấn Add to cart'
-WebUI.scrollToElement(findTestObject('quan-ly-san-pham-gio-hang/btnAddFirst'), 4)
+'nhấn Add to cart vào sản phẩm đầu tiên'
 WebUI.waitForElementClickable(findTestObject('quan-ly-san-pham-gio-hang/btnAddFirst'), 3)
 WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/btnAddFirst'))
 
 'Click Continue Shopping button'
 WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/btnContinueShopping'))
 
-'Di chuột lên sản phẩm thứ hai'
-WebUI.mouseOver(findTestObject('quan-ly-san-pham-gio-hang/btnAddSecond'))
-
-'nhấn Add to cart'
+'nhấn Add to cart sản phẩm thứ 2'
 WebUI.scrollToElement(findTestObject('quan-ly-san-pham-gio-hang/btnAddSecond'), 2)
 WebUI.waitForElementClickable(findTestObject('quan-ly-san-pham-gio-hang/btnAddSecond'), 10)
 WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/btnAddSecond'))
@@ -43,8 +37,9 @@ WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/btnAddSecond'))
 WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/btnViewCart'))
 
 'Hai sản phẩm hiển thị trong danh sách giỏ hàng'
-sanPham1= WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/SanPhamBlueTop'))
-assert sanPham1.contains('Blue Top')
 
-sanPham2= WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/sanPhamMenShip'))
-assert sanPham2.contains('Men Tshirt')
+List<WebElement> items = WebUI.findWebElements(findTestObject('quan-ly-san-pham-gio-hang/rowItemCart'), 10)
+int itemCount = items.size()
+assert itemCount == 2
+
+

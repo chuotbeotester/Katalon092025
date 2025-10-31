@@ -35,3 +35,4 @@ searchProduct = WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtSearc
 assert searchProduct.equalsIgnoreCase('Searched Products')
 
 'Tất cả các sản phẩm liên quan đến tìm kiếm đều hiển thị'
+CustomKeywords.'test.SearchProduct.verifyProductsContainKeyword'(searchSanPham)

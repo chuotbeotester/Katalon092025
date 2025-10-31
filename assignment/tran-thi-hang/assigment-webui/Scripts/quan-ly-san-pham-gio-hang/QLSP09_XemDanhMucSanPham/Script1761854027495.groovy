@@ -17,29 +17,27 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-'Click on Products button'
-WebUI.click(findTestObject('tuong-tac-ho-tro-nguoi-dung/btnProduct'))
+'Danh mục được hiển thị ở phía trái side bar'
+String txtCategory=WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtCategorySideBar'))
+assert txtCategory.equals('CATEGORY')
 
-'Thương hiệu hiển thị trên thanh bên trái'
-String brands = WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/listBranch'))
-assert brands.equalsIgnoreCase('Brands')
+'Click danh mục Women'
+WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/aWomen'))
 
-'Nhấp vào tên thương hiệu bất kỳ'	
-WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/aBrandPolo'))
+'Click lên danh mục bất kỳ dưới link Women ví dụ:Dress'
+WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/aDanhMucDress'))
 
-'người dùng được điều hướng đến trang thương hiệu và các sản phẩm của thương hiệu được hiển thị'
-String textBrandPolo = WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtBrand'))
-assert textBrandPolo.toLowerCase().contains('polo products'.toLowerCase())
+'Trang danh mục và text xác nhận WOMEN - TOPS PRODUCTS được hiển thị'
+String txtWomenProducts=WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtSanPhamDress'))
+assert txtWomenProducts.contains('WOMEN -  Dress PRODUCTS')
 
 WebUI.verifyElementVisible(findTestObject('quan-ly-san-pham-gio-hang/listSanPham'))
 
-'Trên thanh bên trái, nhấp vào bất kỳ liên kết thương hiệu nào khác'
-WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/aBrandMadan'))
+'Trên phía trái side bar, click lên bất kỳ link danh mục phụ của danh mục Men'
+WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/aMen'))
+WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/aMenTshirt'))
 
-'Người dùng được điều hướng đến trang thương hiệu đó và có thể xem sản phẩm'
-String textBrandMadance = WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtBrand'))
-assert textBrandMadance.toLowerCase().contains('madame products'.toLowerCase())
+'Người dùng được điều hướng đến trang danh mục'
 WebUI.verifyElementVisible(findTestObject('quan-ly-san-pham-gio-hang/listSanPham'))
-
-
-
+String txtMenProducts=WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtSanPhamDress'))
+assert txtMenProducts.contains('MEN -  Tshirts PRODUCTS')
