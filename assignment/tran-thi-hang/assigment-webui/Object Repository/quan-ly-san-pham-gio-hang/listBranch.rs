@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txtQualityProductCart</name>
+   <name>listBranch</name>
    <tag></tag>
-   <elementGuidId>cf1ab762-0668-4fbe-8e27-9719c340b411</elementGuidId>
+   <elementGuidId>b1efd586-24da-4735-a0cd-4edb6bf98d20</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//td[@class='cart_quantity']//button</value>
+         <value>//h2[normalize-space()='Brands']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

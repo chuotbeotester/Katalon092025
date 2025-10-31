@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txtQualityProductCart</name>
+   <name>branchProduct</name>
    <tag></tag>
-   <elementGuidId>cf1ab762-0668-4fbe-8e27-9719c340b411</elementGuidId>
+   <elementGuidId>5858424d-fbe2-46eb-a18e-c0095146ac18</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//td[@class='cart_quantity']//button</value>
+         <value>//a[@href='/brand_products/${brandany}']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
