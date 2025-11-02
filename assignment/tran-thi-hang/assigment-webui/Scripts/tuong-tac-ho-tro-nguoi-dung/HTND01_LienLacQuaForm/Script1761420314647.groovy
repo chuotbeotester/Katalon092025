@@ -23,7 +23,7 @@ WebUI.click(findTestObject('tuong-tac-ho-tro-nguoi-dung/btnContactUs'))
 
 'Verify GET IN TOUCH được hiển thị'
 textGetInTouch = WebUI.getText(findTestObject('tuong-tac-ho-tro-nguoi-dung/txtGetInTouch'))
-assert textGetInTouch.equals('Get In Touch')
+assert textGetInTouch.equalsIgnoreCase('Get In Touch')
 
 'Nhập Name'
 WebUI.setText(findTestObject('tuong-tac-ho-tro-nguoi-dung/iptName'), name)

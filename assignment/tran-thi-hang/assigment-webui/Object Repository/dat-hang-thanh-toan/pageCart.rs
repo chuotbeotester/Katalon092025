@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txtQualityProductCart</name>
+   <name>pageCart</name>
    <tag></tag>
-   <elementGuidId>cf1ab762-0668-4fbe-8e27-9719c340b411</elementGuidId>
+   <elementGuidId>2985f13c-6b4e-4dae-a1d7-be1c3296f41c</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//td[@class='cart_quantity']//button</value>
+         <value>//section[@id='cart_items']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -17,3 +17,61 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+'Click on Products button'
+WebUI.click(findTestObject('tuong-tac-ho-tro-nguoi-dung/btnProduct'))
+
+'Verify điều hướng đến trang ALL PRODUCTS  thành công'
+allProduct = WebUI.getText(findTestObject('tuong-tac-ho-tro-nguoi-dung/txtAllProducts'))
+assert allProduct.equalsIgnoreCase('All Products')
+
+'Nhập tên sản phẩm vào ô tìm kiếm'
+WebUI.setText(findTestObject('quan-ly-san-pham-gio-hang/iptSearch'), searchSanPham)
+
+'nhấn nút tìm kiếm'
+WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/btnSearch'))
+
+'SEARCHED PRODUCTS  được hiển thị'
+searchProduct = WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtSearchProduct'))
+assert searchProduct.equalsIgnoreCase('Searched Products')
+
+'Tất cả các sản phẩm liên quan đến tìm kiếm đều hiển thị'
+CustomKeywords.'test.SearchProduct.verifyProductsContainKeyword'(searchSanPham)
+
+
+'Thêm các sản phẩm tìm được vào giỏ hàng'
+CustomKeywords.'test.SearchProduct.addButtonCartAll'()
+
+
+'Click nút Cart'
+WebUI.click(findTestObject('dat-hang-thanh-toan/btnCart'))
+
+'Các sản phẩm đều được thêm vào giỏ hàng'
+List<WebElement> cartItems = WebUI.findWebElements(findTestObject('quan-ly-san-pham-gio-hang/ListViewCart'), 10)
+
+for (WebElement item : cartItems)  {
+	String txtCartDescription = item.getText()
+	assert txtCartDescription.contains(searchSanPham)
+}
+
+'Click Signup Login button'
+WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/btnSignUpLogin'))
+
+'Nhập email'
+WebUI.setText(findTestObject('quan-ly-tai-khoan/dang-nhap/iptEmailDangNhap'), email)
+
+'Nhập password'
+WebUI.setText(findTestObject('quan-ly-tai-khoan/dang-nhap/iptPasswordDangNhap'), password)
+
+'Click button Login'
+WebUI.click(findTestObject('quan-ly-tai-khoan/dang-nhap/btnLogin'))
+
+'Đi đến trang giỏ hàng'
+WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/btnViewCart'))
+
+'Tất cả sản phẩm được hiển thị sau khi đăng nhập'
+List<WebElement> cartItems = WebUI.findWebElements(findTestObject('quan-ly-san-pham-gio-hang/ListViewCart'), 10)
+
+for (WebElement item : cartItems)  {
+	String txtCartDescription = item.getText()
+	assert txtCartDescription.contains(searchSanPham)
+}

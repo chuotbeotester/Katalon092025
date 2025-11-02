@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txtQualityProductCart</name>
+   <name>iptExpirationYear</name>
    <tag></tag>
-   <elementGuidId>cf1ab762-0668-4fbe-8e27-9719c340b411</elementGuidId>
+   <elementGuidId>ce313bee-8873-4b5d-a530-826dc76c8158</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//td[@class='cart_quantity']//button</value>
+         <value>//input[@name='expiry_year']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

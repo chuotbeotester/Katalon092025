@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txtQualityProductCart</name>
+   <name>aRegisterLogin</name>
    <tag></tag>
-   <elementGuidId>cf1ab762-0668-4fbe-8e27-9719c340b411</elementGuidId>
+   <elementGuidId>9ce100a7-e3f4-4762-892c-875a99101879</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//td[@class='cart_quantity']//button</value>
+         <value>//u[normalize-space()='Register / Login']//parent::a</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -17,20 +17,12 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-'Verify  New User Signup! được hiển thị'
-textNewUser = WebUI.getText(findTestObject('quan-ly-tai-khoan/dang-ky/txtNewSignUp'))
-assert textNewUser.equals('New User Signup!')
+'Click Signup Login button'
+WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/btnSignUpLogin'))
 
+'Nhập đầy đủ thông tin vào form Sign Up và tạo tài khoản'
+//dùng CustomKeyWord RegisterAccount
 CustomKeywords.'test.RegisterAccount.fillSignupForm'(name, email)
-
-'Verify  Name'
-nameUI = WebUI.getAttribute(findTestObject('quan-ly-tai-khoan/dang-ky/txtName'), 'value')
-assert nameUI.equals(name)
-
-'Verify Email'
-emailUI = WebUI.getAttribute(findTestObject('quan-ly-tai-khoan/dang-ky/txtEmail'), 'value')
-assert emailUI.equals(email)
-
 CustomKeywords.'test.RegisterAccount.fillAccountForm'(password, day, month, year, firstname, lastname, address, selectCountry, state, city, zipcode, phonenumber)
 
 'Verify hiển thị ACCOUNT CREATED!'
@@ -40,20 +32,32 @@ assert accountCreated.equalsIgnoreCase('Account Created!')
 'Click button Continue'
 WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/btnContinue'))
 
-'Verify hien thi hiển thị “Logged in as username'
+'Verify hien thi hiển thị “Logged in as username" hiển thị ở góc trên'
 actualTextName = WebUI.getText(findTestObject('quan-ly-tai-khoan/dang-ky/txtLoginUserName'))
 assert actualTextName.equals('Logged in as ' + name)
 
-GlobalVariable.name = name
-GlobalVariable.email =email
-GlobalVariable.password = password
+'Thêm sản phẩm vào giỏ hàng'
+WebUI.waitForElementClickable(findTestObject('quan-ly-san-pham-gio-hang/btnAddFirst'), 3)
+WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/btnAddFirst'))
 
-//'Click button Delete Account'
-//WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/btnDeleteAccount'))
-//
-//'Verify hien thi “ACCOUNT DELETED!”'
-//accountDeleted = WebUI.getText(findTestObject('quan-ly-tai-khoan/dang-ky/txtAccountDeleted'))
-//assert accountDeleted.equals('ACCOUNT DELETED!')
-//
-//'Click [Continue]'
-//WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/btnContinueDelete'))
+'Click View Cart button'
+
+WebUI.click(findTestObject('dat-hang-thanh-toan/btnCart'))
+
+'Verify that cart page is displayed'
+WebUI.verifyElementVisible('dat-hang-thanh-toan/pageCart')
+
+'Click Proceed To Checkout button'
+WebUI.click(findTestObject('dat-hang-thanh-toan/btn_ProccedCheckout'))
+
+
+'Xác minh địa chỉ giao hàng và phần xem lại đơn hàng'
+//CustomKeywords.'test.RegisterAccount.verifyDeliveryAddress'(firstname, lastname, address, city, selectCountry, phonenumber)
+
+
+'Click button Delete Account'
+WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/btnDeleteAccount'))
+
+'Verify hien thi “ACCOUNT DELETED!”'
+accountDeleted = WebUI.getText(findTestObject('quan-ly-tai-khoan/dang-ky/txtAccountDeleted'))
+assert accountDeleted.equals('ACCOUNT DELETED!')

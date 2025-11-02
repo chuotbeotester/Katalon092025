@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>QLSP07_TimKiemSanPhamGioHangDangNhap</name>
+   <name>DHTT03_DangNhapKhiDatHang</name>
    <tag></tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
-   <testCaseGuid>5382c19a-df40-406a-8cb0-babbaf9f7dc4</testCaseGuid>
+   <testCaseGuid>cf304a05-73ed-4d9b-970d-7b881be7de0a</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>a47c30cc-a1cf-40bb-b518-4612a20fceba</variableId>
+      <variableId>3834664e-407c-4384-becc-3b8474099eed</variableId>
    </variableLinks>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>9428161b-4199-444c-9218-ceb914e322c1</variableId>
+      <variableId>bb9da6fe-5f69-4b0c-b086-db352c9a828a</variableId>
    </variableLinks>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>c3a7c0c7-ac84-40e9-a949-ee66d9a78a43</variableId>
+      <variableId>0e29cbd3-e24f-40e5-b953-50732005aa96</variableId>
    </variableLinks>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>a47c30cc-a1cf-40bb-b518-4612a20fceba</id>
+      <id>3834664e-407c-4384-becc-3b8474099eed</id>
       <masked>false</masked>
-      <name>searchSanPham</name>
+      <name>name</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>9428161b-4199-444c-9218-ceb914e322c1</id>
+      <id>bb9da6fe-5f69-4b0c-b086-db352c9a828a</id>
       <masked>false</masked>
       <name>email</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>c3a7c0c7-ac84-40e9-a949-ee66d9a78a43</id>
+      <id>0e29cbd3-e24f-40e5-b953-50732005aa96</id>
       <masked>false</masked>
       <name>password</name>
    </variable>

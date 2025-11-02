@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DataFileEntity>
    <description></description>
-   <name>quan-ly-tai-khoan</name>
+   <name>dat-hang-thanh-toan</name>
    <tag></tag>
    <connectionProperties/>
    <containsHeaders>true</containsHeaders>
    <csvSeperator></csvSeperator>
-   <dataFileGUID>558ffbfa-36bc-41cb-b086-6d308618bdd4</dataFileGUID>
-   <dataSourceUrl>Data Files/excel-data/quan-ly-tai-khoan.xlsx</dataSourceUrl>
+   <dataFileGUID>a8820e08-755c-4645-918e-8fa1263b2e19</dataFileGUID>
+   <dataSourceUrl>Data Files/excel-data/dat-hang-thanh-toan.xlsx</dataSourceUrl>
    <driver>ExcelFile</driver>
    <isInternalPath>true</isInternalPath>
    <query></query>
    <secureUserAccount>false</secureUserAccount>
-   <sheetName>quan-ly-tai-khoan</sheetName>
+   <sheetName>dat-hang-thanh-toan</sheetName>
    <usingGlobalDBSetting>false</usingGlobalDBSetting>
 </DataFileEntity>
