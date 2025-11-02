@@ -34,5 +34,5 @@ WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/btnAddToCartDetail'))
 WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/btnViewCart'))
 
 'sản phẩm được hiển thị trong trang giỏ hàng với số lượng chính xác'
-//String quantityProduct = WebUI.getAttribute(findTestObject('quan-ly-san-pham-gio-hang/txtQualityProductCart'), 'value')
-//assert quantityProduct.equals(productQuantity)
+String quantityProduct = WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtQualityProductCart'))
+assert quantityProduct.equals(productQuantity)

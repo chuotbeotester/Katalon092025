@@ -17,11 +17,19 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+
 'Verify  New User Signup! được hiển thị'
 textNewUser = WebUI.getText(findTestObject('quan-ly-tai-khoan/dang-ky/txtNewSignUp'))
 assert textNewUser.equals('New User Signup!')
 
-CustomKeywords.'test.RegisterAccount.fillSignupForm'(name, email)
+'Nhập name'
+WebUI.setText(findTestObject('quan-ly-tai-khoan/dang-ky/iptName'), name)
+
+'Nhập email'
+WebUI.setText(findTestObject('quan-ly-tai-khoan/dang-ky/iptEmail'), email)
+
+'Click button [Sign up]'
+WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/btnSignUp'))
 
 'Verify  Name'
 nameUI = WebUI.getAttribute(findTestObject('quan-ly-tai-khoan/dang-ky/txtName'), 'value')
@@ -31,7 +39,53 @@ assert nameUI.equals(name)
 emailUI = WebUI.getAttribute(findTestObject('quan-ly-tai-khoan/dang-ky/txtEmail'), 'value')
 assert emailUI.equals(email)
 
-CustomKeywords.'test.RegisterAccount.fillAccountForm'(password, day, month, year, firstname, lastname, address, selectCountry, state, city, zipcode, phonenumber)
+'Click chọn Tỉtle'
+WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/radTitlle'))
+
+'Nhập password'
+WebUI.setText(findTestObject('quan-ly-tai-khoan/dang-ky/iptPasssword'), password)
+
+'Chọn Day'
+WebUI.selectOptionByValue(findTestObject('quan-ly-tai-khoan/dang-ky/selectDay'), day, false)
+
+'Chọn Month'
+WebUI.selectOptionByValue(findTestObject('quan-ly-tai-khoan/dang-ky/selectMonth'), month , false)
+
+'Chọn year'
+WebUI.selectOptionByValue(findTestObject('quan-ly-tai-khoan/dang-ky/selectYear'), year, false)
+
+'Click vào checkbox New Letter'
+WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/checkboxNewLetter'))
+
+'Click vào checkbox Receive'
+WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/checkboxReceive'))
+
+'Nhập firstname'
+WebUI.setText(findTestObject('quan-ly-tai-khoan/dang-ky/iptFirstName'), firstname)
+
+'Nhập lastname'
+WebUI.setText(findTestObject('quan-ly-tai-khoan/dang-ky/iptLastName'), lastname)
+
+'Nhập adđress'
+WebUI.setText(findTestObject('quan-ly-tai-khoan/dang-ky/iptAddress'), address)
+
+'Chọn Country'
+WebUI.selectOptionByValue(findTestObject('quan-ly-tai-khoan/dang-ky/iptContry'), selectCountry , false)
+
+'Nhập state'
+WebUI.setText(findTestObject('quan-ly-tai-khoan/dang-ky/iptState'), state)
+
+'Nhập city'
+WebUI.setText(findTestObject('quan-ly-tai-khoan/dang-ky/iptCity'), city)
+
+'Nhập zipcode'
+WebUI.setText(findTestObject('quan-ly-tai-khoan/dang-ky/iptZipCode'), zipcode)
+
+'Nhập phone number'
+WebUI.setText(findTestObject('quan-ly-tai-khoan/dang-ky/iptMobile'), phonenumber)
+
+'click button [Create Account]'
+WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/btnCreateAccount'))
 
 'Verify hiển thị ACCOUNT CREATED!'
 accountCreated = WebUI.getText(findTestObject('quan-ly-tai-khoan/dang-ky/txtAccountCreated'))
@@ -44,16 +98,7 @@ WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/btnContinue'))
 actualTextName = WebUI.getText(findTestObject('quan-ly-tai-khoan/dang-ky/txtLoginUserName'))
 assert actualTextName.equals('Logged in as ' + name)
 
+
 GlobalVariable.name = name
 GlobalVariable.email =email
 GlobalVariable.password = password
-
-//'Click button Delete Account'
-//WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/btnDeleteAccount'))
-//
-//'Verify hien thi “ACCOUNT DELETED!”'
-//accountDeleted = WebUI.getText(findTestObject('quan-ly-tai-khoan/dang-ky/txtAccountDeleted'))
-//assert accountDeleted.equals('ACCOUNT DELETED!')
-//
-//'Click [Continue]'
-//WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/btnContinueDelete'))
