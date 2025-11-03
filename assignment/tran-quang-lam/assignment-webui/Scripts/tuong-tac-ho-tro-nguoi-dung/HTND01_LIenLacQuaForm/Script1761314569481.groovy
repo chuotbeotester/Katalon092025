@@ -15,15 +15,16 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
+import internal.GlobalVariable
+import keyword.HelperKeywords
+
 import org.openqa.selenium.Keys as Keys
 
 'Click Contact us'
 WebUI.click(findTestObject('tuong-tac-ho-tro-nguoi-dung/aContactUs'))
 
 'Verify GET IN TOUCH'
-txtGetInTouch=WebUI.getText(findTestObject('tuong-tac-ho-tro-nguoi-dung/txtGetInTouch'))
-assert txtGetInTouch.equals('GET IN TOUCH')
+HelperKeywords.verifyTextEqual(findTestObject('tuong-tac-ho-tro-nguoi-dung/txtGetInTouch'), 'GET IN TOUCH')
 
 'Nhập name'
 WebUI.setText(findTestObject('tuong-tac-ho-tro-nguoi-dung/iptNameContact'), name)
@@ -38,11 +39,7 @@ WebUI.setText(findTestObject('tuong-tac-ho-tro-nguoi-dung/iptSubject'), subject)
 WebUI.setText(findTestObject('tuong-tac-ho-tro-nguoi-dung/textareaMessage'), message)
 
 'upload file'
-
-String projectDir=RunConfiguration.getProjectDir()
-String filePath=projectDir+'/Data Files/fileupload-htnd01.jpg'
-
-WebUI.uploadFile(findTestObject('tuong-tac-ho-tro-nguoi-dung/iptUploadFile'), filePath)
+HelperKeywords.uploadFileProjectDir('/Data Files/fileupload-htnd01.jpg', findTestObject('tuong-tac-ho-tro-nguoi-dung/iptUploadFile'))
 
 'Nhấn submit'
 WebUI.click(findTestObject('tuong-tac-ho-tro-nguoi-dung/iptSubmitContact'))
@@ -51,8 +48,7 @@ WebUI.click(findTestObject('tuong-tac-ho-tro-nguoi-dung/iptSubmitContact'))
 WebUI.acceptAlert()
 
 'Verify Success! Your details have been submitted successfully.'
-txtSuccess=WebUI.getText(findTestObject('tuong-tac-ho-tro-nguoi-dung/txtSuccessContact'))
-assert txtSuccess.equals('Success! Your details have been submitted successfully.')
+HelperKeywords.verifyTextEqual(findTestObject('tuong-tac-ho-tro-nguoi-dung/txtSuccessContact'), 'Success! Your details have been submitted successfully.')
 
 'Click Home'
 WebUI.click(findTestObject('tuong-tac-ho-tro-nguoi-dung/aHome'))

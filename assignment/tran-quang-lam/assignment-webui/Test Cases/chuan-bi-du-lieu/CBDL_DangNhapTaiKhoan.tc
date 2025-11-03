@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>CBDL_DangNhapTaiKhoan</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>bad3d511-90b2-46f6-ac2c-85984d1d32b4</testCaseGuid>
+   <testDataLinks>
+      <combinationType>ONE</combinationType>
+      <id>1e06f0bc-35ad-4060-aea0-ef8f5b46fe3b</id>
+      <iterationEntity>
+         <iterationType>RANGE</iterationType>
+         <value>4-4</value>
+      </iterationEntity>
+      <testDataId>Data Files/quan-ly-tai-khoan</testDataId>
+   </testDataLinks>
+   <variableLinks>
+      <testDataLinkId>1e06f0bc-35ad-4060-aea0-ef8f5b46fe3b</testDataLinkId>
+      <type>DATA_COLUMN</type>
+      <value>email</value>
+      <variableId>d6e1ce30-21a8-4366-978e-eeb716e8918c</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId>1e06f0bc-35ad-4060-aea0-ef8f5b46fe3b</testDataLinkId>
+      <type>DATA_COLUMN</type>
+      <value>password</value>
+      <variableId>f36e2dfc-fb8c-4933-88ff-ea77f0f08d20</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>d6e1ce30-21a8-4366-978e-eeb716e8918c</id>
+      <masked>false</masked>
+      <name>email</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>f36e2dfc-fb8c-4933-88ff-ea77f0f08d20</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
+</TestCaseEntity>

@@ -14,14 +14,14 @@
    <testCaseLink>
       <guid>a05d1a40-cdf1-4985-a5f8-80bb7092b2cf</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/quan-ly-san-pham-va-gio-hang/QLSP01_verifyAllProductsVaProductDetail</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>dfc4d345-5980-4894-8824-acb118612a6e</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/quan-ly-san-pham-va-gio-hang/QLSP02_TimKiemSanPham</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -49,23 +49,53 @@
    <testCaseLink>
       <guid>877a574a-cb42-464c-b7b8-a865bb7f9ffc</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/quan-ly-san-pham-va-gio-hang/QLSP03_ThemSanPhamVaoGioHang</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>52b869fe-4796-40e0-a5a5-719d4c3b3144</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/quan-ly-san-pham-va-gio-hang/QLSP04_KiemTraSoLuongSanPhamTrongGioHang</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>0d2e3fc9-a4c0-419e-b04f-7565dfb29989</id>
+         <iterationEntity>
+            <iterationType>RANGE</iterationType>
+            <value>4-4</value>
+         </iterationEntity>
+         <testDataId>Data Files/quan-ly-san-pham-va-gio-hang</testDataId>
+      </testDataLink>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId>0d2e3fc9-a4c0-419e-b04f-7565dfb29989</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>quantity</value>
+         <variableId>cf398280-f9ac-41f5-b8da-0fa665373b1a</variableId>
+      </variableLink>
    </testCaseLink>
    <testCaseLink>
       <guid>1e3e8014-529f-48a3-928a-50add4736943</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/quan-ly-san-pham-va-gio-hang/QLSP05_LoaiSanPhamKhoiGioHang</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>263dc95a-0f5a-4859-830c-31910b1e31c7</id>
+         <iterationEntity>
+            <iterationType>RANGE</iterationType>
+            <value>5-5</value>
+         </iterationEntity>
+         <testDataId>Data Files/quan-ly-san-pham-va-gio-hang</testDataId>
+      </testDataLink>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+      <variableLink>
+         <testDataLinkId>263dc95a-0f5a-4859-830c-31910b1e31c7</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>product</value>
+         <variableId>175fdf24-754b-4060-a60b-c6c70d628d75</variableId>
+      </variableLink>
    </testCaseLink>
    <testCaseLink>
       <guid>c9170da4-7511-40ed-8eff-ea7acff2fbc5</guid>
@@ -77,7 +107,7 @@
    <testCaseLink>
       <guid>d3bad218-367f-4b55-8807-c32deee1da36</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/quan-ly-san-pham-va-gio-hang/QLSP07_XemNhanHieuSanPham</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -105,7 +135,7 @@
    <testCaseLink>
       <guid>9dd08fae-d1b5-455d-9427-28970a8d4e63</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/quan-ly-san-pham-va-gio-hang/QLSP08_TimKiemSanPhamVaVerifyGioHangSauKhiDangNhap</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -145,7 +175,7 @@
    <testCaseLink>
       <guid>52a1277b-b5ab-4ccc-8cc7-2ba7a0a5bdc1</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/quan-ly-san-pham-va-gio-hang/QLSP09_ThemGioHangTuSanPhamDeXuat</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>

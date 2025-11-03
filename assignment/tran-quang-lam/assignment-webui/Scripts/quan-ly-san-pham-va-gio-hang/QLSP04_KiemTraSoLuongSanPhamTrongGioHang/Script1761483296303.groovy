@@ -14,18 +14,20 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
+import internal.GlobalVariable
+import keyword.HelperKeywords
+
 import org.openqa.selenium.Keys as Keys
 
 'Click view product cho sản phẩm bất kỳ'
-WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aViewProduct',[('product'):1]))
+WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/txtViewProduct',[('product'):1]))
 
 'Chi tiết sản phẩm được mở'
 String txtReview=WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang/aReviews'))
 assert txtReview.equals('WRITE YOUR REVIEW')
 
 'Tăng số lượng lên 4'
-WebUI.setText(findTestObject('quan-ly-san-pham-va-gio-hang/iptQuantity'), '4')
+WebUI.setText(findTestObject('quan-ly-san-pham-va-gio-hang/iptQuantity'), quantity)
 
 'Click nút Add to cart'
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/btnAddToCart'))
@@ -34,5 +36,4 @@ WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/btnAddToCart'))
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aViewCartProducts'))
 
 'Sản phẩm được hiển thị trong giỏ hàng với số lượng chính xác'
-txtBtnQuantity=WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang/txtBtnQuantity'))
-assert txtBtnQuantity.equals('4')
+HelperKeywords.verifyTextEqual(findTestObject('quan-ly-san-pham-va-gio-hang/txtBtnQuantity'), quantity)

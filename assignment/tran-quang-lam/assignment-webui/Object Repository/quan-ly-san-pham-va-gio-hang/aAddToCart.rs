@@ -6,12 +6,11 @@
    <elementGuidId>8a41a881-04af-428d-b32b-9541e12dfd81</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[contains(@class,'productinfo text-center')]//a[contains(@class,'add-to-cart') and @data-product-id='${product}']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>(//a[contains(@class,'add-to-cart')])[${product}]</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

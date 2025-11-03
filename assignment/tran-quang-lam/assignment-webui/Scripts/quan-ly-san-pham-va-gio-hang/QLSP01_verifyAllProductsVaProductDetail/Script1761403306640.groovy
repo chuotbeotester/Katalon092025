@@ -14,8 +14,12 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
+import internal.GlobalVariable
+import keyword.HelperKeywords
+
+import org.openqa.selenium.Keys
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.WebElement as Keys
 
 'Click vào Products'
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aProducts'))
@@ -25,29 +29,32 @@ String txtAllProducts=WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang
 assert txtAllProducts.equals('ALL PRODUCTS')
 
 'Danh sách sản phẩm được hiển thị'
-WebUI.verifyElementVisible(findTestObject('quan-ly-san-pham-va-gio-hang/aViewProduct',[('product'):1]))
+HelperKeywords.verifyAllDisplay(findTestObject('quan-ly-san-pham-va-gio-hang/imgProduct'))
+
+//Lấy thông tin của sản phẩm đầu tiên
+String txtNameProductFirst= WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang/txtNameProduct',[('product'):1]))
+String txtPriceProductFirst=WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang/txtPriceProduct',[('product'):1]))
 
 'Click vào View Product của sản phẩm đầu tiên'
-WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aViewProduct',[('product'):1]))
+WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/txtViewProduct',[('product'):1]))
 
 'Người dùng được chuyển đến trang chi tiết sản phẩm'
-String txtReview=WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang/aReviews'))
-assert txtReview.equals('WRITE YOUR REVIEW')
+HelperKeywords.verifyTextEqual(findTestObject('quan-ly-san-pham-va-gio-hang/txtProductName'), txtNameProductFirst)
 
 'Product name hiển thị'
-WebUI.verifyElementVisible(findTestObject('quan-ly-san-pham-va-gio-hang/txtProductName'))
+HelperKeywords.verifyTextAndVisible(findTestObject('quan-ly-san-pham-va-gio-hang/txtProductName'), txtNameProductFirst)
 
 'Category hiển thị'
-WebUI.verifyElementVisible(findTestObject('quan-ly-san-pham-va-gio-hang/txtCategory'))
+assert WebUI.verifyElementVisible(findTestObject('quan-ly-san-pham-va-gio-hang/txtCategory'))
 
 'Price hiển thị'
-WebUI.verifyElementVisible(findTestObject('quan-ly-san-pham-va-gio-hang/txtPrice'))
+HelperKeywords.verifyTextAndVisible(findTestObject('quan-ly-san-pham-va-gio-hang/txtPrice'), txtPriceProductFirst)
 
 'Availibity hiển thị'
-WebUI.verifyElementVisible(findTestObject('quan-ly-san-pham-va-gio-hang/txtAvailibility'))
+assert WebUI.verifyElementVisible(findTestObject('quan-ly-san-pham-va-gio-hang/txtAvailibility'))
 
 'Condition hiển thị'
-WebUI.verifyElementVisible(findTestObject('quan-ly-san-pham-va-gio-hang/txtCondition'))
+assert WebUI.verifyElementVisible(findTestObject('quan-ly-san-pham-va-gio-hang/txtCondition'))
 
 'Brand hiển thị'
-WebUI.verifyElementVisible(findTestObject('quan-ly-san-pham-va-gio-hang/txtBrand'))
+assert WebUI.verifyElementVisible(findTestObject('quan-ly-san-pham-va-gio-hang/txtBrand'))

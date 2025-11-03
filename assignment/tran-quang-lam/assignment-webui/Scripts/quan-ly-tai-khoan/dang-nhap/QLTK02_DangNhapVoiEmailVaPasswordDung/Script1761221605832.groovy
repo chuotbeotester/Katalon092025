@@ -14,7 +14,9 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
+import internal.GlobalVariable
+import keyword.HelperKeywords
+
 import org.openqa.selenium.Keys as Keys
 
 'Nhập email đúng'
@@ -27,12 +29,10 @@ WebUI.setText(findTestObject('quan-ly-tai-khoan/dang-nhap/iptPassword'), GlobalV
 WebUI.click(findTestObject('quan-ly-tai-khoan/dang-nhap/btnLogin'))
 
 'Verify Logged in as username hiển thị'
-String txtLoggedIn=WebUI.getText(findTestObject('quan-ly-tai-khoan/dang-nhap/txtLoggedIn'))
-assert txtLoggedIn.contains('Logged in as')
+HelperKeywords.verifyTextContains(findTestObject('quan-ly-tai-khoan/dang-nhap/txtLoggedIn'), 'Logged in as')
 
 'Click nút Delete Account'
 WebUI.click(findTestObject('quan-ly-tai-khoan/dang-nhap/aDeleteAccount'))
 
 'Verify ACCOUNT DELETED! hiển thị'
-txtDeleteAccount=WebUI.getText(findTestObject('quan-ly-tai-khoan/dang-nhap/txtDeleteAccount'))
-assert txtDeleteAccount.equals("ACCOUNT DELETED!")
+HelperKeywords.verifyTextEqual(findTestObject('quan-ly-tai-khoan/dang-nhap/txtDeleteAccount'), "ACCOUNT DELETED!")

@@ -14,18 +14,18 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable
-import keyword.HelperKeywords
-
-import org.openqa.selenium.Keys
-import org.openqa.selenium.WebElement
+import internal.GlobalVariable as GlobalVariable
+import keyword.DangNhap as DangNhap
+import keyword.HelperKeywords as HelperKeywords
+import keyword.ProductAndCartObject as ProductAndCartObject
+import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.WebElement as WebElement
 
 'Click vào Products'
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aProducts'))
 
 'Verify điều hướng đến trang ALL PRODUCTS'
-String txtAllProducts=WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang/txtAllProducts'))
-assert txtAllProducts.equals('ALL PRODUCTS')
+HelperKeywords.verifyTextEqual(findTestObject('quan-ly-san-pham-va-gio-hang/txtAllProducts'), 'ALL PRODUCTS')
 
 'Nhập tên sản phẩm lên ô input'
 WebUI.setText(findTestObject('quan-ly-san-pham-va-gio-hang/iptSearchProduct'), searchName)
@@ -34,44 +34,31 @@ WebUI.setText(findTestObject('quan-ly-san-pham-va-gio-hang/iptSearchProduct'), s
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/btnSearch'))
 
 'SEARCHED PRODUCTS hiển thị thành công'
-String txtSearchedProducts=WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang/txtSearchedProducts'))
+String txtSearchedProducts = WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang/txtSearchedProducts'))
+
 assert txtSearchedProducts.equals('SEARCHED PRODUCTS')
 
 'Các sản phẩm liên quan được hiển thị thành công'
-List<WebElement> lstNameProducts=WebUI.findWebElements(findTestObject('quan-ly-san-pham-va-gio-hang/txtNameProducts'), 0)
-for(WebElement products: lstNameProducts) {
-	HelperKeywords.verifyTextContains(products, searchName)
-}
+HelperKeywords.verifyAllContainText(findTestObject('quan-ly-san-pham-va-gio-hang/txtNameProducts'), searchName)
 
 'Thêm tất cả sản phẩm vào giỏ hàng'
-List<WebElement> lstAddToCart = WebUI.findWebElements(findTestObject('quan-ly-san-pham-va-gio-hang/btnAddToCartAll'), 10)
-for (WebElement element : lstAddToCart) {
-	WebUI.executeJavaScript("arguments[0].click();", Arrays.asList(element))
-	WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/btnContinueShopping'))
-}
+ProductAndCartObject.addToCartAllProduct()
 
 'Click nút Cart'
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aViewCart'))
 
 'Các sản phẩm đều được thêm vào giỏ hàng'
-List<WebElement> lstCartDescription=WebUI.findWebElements(findTestObject('quan-ly-san-pham-va-gio-hang/txtCartDescription'), 10)
-for(WebElement element:lstCartDescription) {
-	HelperKeywords.verifyTextContains(element, searchName)
-}
+HelperKeywords.verifyAllContainText(findTestObject('quan-ly-san-pham-va-gio-hang/txtCartDescription'), searchName)
 
 'Click nút Signup/Login'
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aSignupLogin'))
 
 'Gửi chi tiết đăng nhập'
-WebUI.setText(findTestObject('quan-ly-san-pham-va-gio-hang/iptEmail'), email)
-WebUI.setText(findTestObject('quan-ly-san-pham-va-gio-hang/iptPassword'), password)
-WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/btnLogin'))
+WebUI.callTestCase(findTestCase('chuan-bi-du-lieu/CBDL_DangNhapTaiKhoan'), [('email') : email, ('password') : password])
 
 'Đi đến trang giỏ hàng'
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aViewCart'))
 
 'Tất cả sản phẩm được hiển thị sau khi đăng nhập'
-List<WebElement> lstCartDescriptionLogin=WebUI.findWebElements(findTestObject('quan-ly-san-pham-va-gio-hang/txtCartDescription'), 10)
-for(WebElement element:lstCartDescriptionLogin) {
-	HelperKeywords.verifyTextContains(element, searchName)
-}
+HelperKeywords.verifyAllContainText(findTestObject('quan-ly-san-pham-va-gio-hang/txtCartDescription'), searchName)
+

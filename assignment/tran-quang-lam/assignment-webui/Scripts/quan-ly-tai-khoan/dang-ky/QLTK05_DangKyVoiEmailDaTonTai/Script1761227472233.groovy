@@ -14,7 +14,9 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
+import internal.GlobalVariable
+import keyword.HelperKeywords
+
 import org.openqa.selenium.Keys as Keys
 
 'Nhập name Signup'
@@ -27,5 +29,4 @@ WebUI.setText(findTestObject('quan-ly-tai-khoan/dang-ky/iptEmail'), email)
 WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/btnSignup'))
 
 'Verify Email Address already exist! hiển thị'
-txtEmailExist=WebUI.getText(findTestObject('quan-ly-tai-khoan/dang-ky/txtEmailExist'))
-assert txtEmailExist.equals('Email Address already exist!')
+HelperKeywords.verifyTextEqual(findTestObject('quan-ly-tai-khoan/dang-ky/txtEmailExist'), 'Email Address already exist!')

@@ -27,14 +27,14 @@ assert txtCategory.equals('CATEGORY')
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aWomen'))
 
 'Click lên danh mục bất kỳ dưới link Women ví dụ:Dress'
-WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aCategoryProducts',[('products'):1]))
+WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aCategoryWomenProducts',[('categorySub'):'Dress']))
 
 'Trang danh mục và text xác nhận WOMEN - TOPS PRODUCTS được hiển thị'
 HelperKeywords.verifyTextEqualLower(findTestObject('quan-ly-san-pham-va-gio-hang/txtWomenProducts'), 'WOMEN -  Dress PRODUCTS')
 
 'Trên phía trái side bar, click lên bất kỳ link danh mục phụ của danh mục Men'
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aMen'))
-WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aCategoryProducts',[('products'):3]))
+WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aCategoryMenProducts',[('category'):'Men', ('categorySub'):'Tshirts']))
 
 'Người dùng được điều hướng đến trang danh mục'
 HelperKeywords.verifyTextEqualLower(findTestObject('quan-ly-san-pham-va-gio-hang/txtWomenProducts'), 'MEN -  Tshirts PRODUCTS')

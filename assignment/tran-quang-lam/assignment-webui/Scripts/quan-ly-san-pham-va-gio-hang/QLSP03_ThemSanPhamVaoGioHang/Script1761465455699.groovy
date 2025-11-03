@@ -17,6 +17,8 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable
+import keyword.HelperKeywords
+import keyword.ProductAndCartObject
 
 import org.openqa.selenium.JavascriptExecutor
 import org.openqa.selenium.Keys
@@ -26,10 +28,8 @@ import org.openqa.selenium.WebElement
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aProducts'))
 
 'Hover đến sản phẩm đầu tiên'
-TestObject productView = findTestObject('quan-ly-san-pham-va-gio-hang/aViewProduct', [('product') : 1])
-WebUI.scrollToElement(productView, 0)
+TestObject productView = findTestObject('quan-ly-san-pham-va-gio-hang/txtViewProduct', [('product') : 1])
 WebUI.mouseOver(productView)
-
 
 'Click Add to cart'
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aAddToCart',[('product'):1]))
@@ -38,24 +38,34 @@ WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aAddToCart',[('product'
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/btnContinueShopping'))
 
 'Hover đến sản phẩm thứ hai'
-WebUI.scrollToElement(findTestObject('quan-ly-san-pham-va-gio-hang/aViewProduct', [('product') : 2]), 0)
+WebUI.mouseOver(findTestObject('quan-ly-san-pham-va-gio-hang/txtViewProduct', [('product') : 2]))
 
 'Click Add to cart'
-WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aAddToCart',[('product'):3]))
+WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aAddToCart',[('product'):2]))
+
+//Lấy thông tin của cả 2 sản phẩm
+Map<String,List<String>> productData= ProductAndCartObject.getProductAndPrice(2)
+List<String> lstNameProduct = productData.names
+List<String> lstPriceProduct = productData.prices
 
 'Click nút view cart'
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aViewCartProducts'))
 
 for(int i=1;i<=2;i++) {
-	'Cả 2 sản phẩm đều hiển thị trong giỏ hàng'
-	assert WebUI.verifyElementVisible(findTestObject('quan-ly-san-pham-va-gio-hang/aViewProduct',[('product'):i]))
+	//Lấy giá trị từ list
+	String name=lstNameProduct[i-1]
+	String price=lstPriceProduct[i-1]
 	
-	'Verify prices sản phẩm'
+	'Verify tên sản phẩm thứ ${i}'
+	HelperKeywords.verifyTextAndVisible(findTestObject('quan-ly-san-pham-va-gio-hang/txtNameCart',[('product'):i]), name)
+	
+	'Verify prices sản phẩm thứ ${i}'
+	HelperKeywords.verifyTextAndVisible(findTestObject('quan-ly-san-pham-va-gio-hang/txtPricesCart',[('product'):i]), price)
 	assert WebUI.verifyElementVisible(findTestObject('quan-ly-san-pham-va-gio-hang/txtPricesCart',[('product'):i]))
 		
-	'Verify quantity sản phẩm'
-	assert WebUI.verifyElementVisible(findTestObject('quan-ly-san-pham-va-gio-hang/txtQuantityCart',[('product'):i]))
+	'Verify quantity sản phẩm thứ ${i}'
+	HelperKeywords.verifyTextAndVisible(findTestObject('quan-ly-san-pham-va-gio-hang/txtQuantityCart',[('product'):i]), '1')
 	
-	'Verify total'
+	'Verify total sản phẩm thứ ${i}'
 	assert WebUI.verifyElementVisible(findTestObject('quan-ly-san-pham-va-gio-hang/txtTotalCart',[('product'):i]))
 }
