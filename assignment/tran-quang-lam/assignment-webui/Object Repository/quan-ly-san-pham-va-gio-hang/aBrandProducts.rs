@@ -6,12 +6,11 @@
    <elementGuidId>47937959-f944-43bf-839b-5edc8f1a73b2</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[contains(@class,'brands-name')]//a[contains(normalize-space(), '${brand}')]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//a[@href='/brand_products/${brand}']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

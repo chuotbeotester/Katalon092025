@@ -14,7 +14,7 @@
    <testCaseLink>
       <guid>4a89c847-f629-4887-89d0-ead844251c67</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/tuong-tac-ho-tro-nguoi-dung/HTND01_LIenLacQuaForm</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -76,7 +76,7 @@
    <testCaseLink>
       <guid>c686c403-b0de-4555-8909-6c9169d6db5d</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/tuong-tac-ho-tro-nguoi-dung/HTND03_ThemDanhGiaSanPham</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>

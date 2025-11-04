@@ -39,23 +39,24 @@ WebUI.click(findTestObject('dat-hang-va-thanh-toan/aProceedToCheckout'))
 WebUI.click(findTestObject('dat-hang-va-thanh-toan/aRegisterLogin'))
 
 'Thực hiện các bước đăng ký'
-DangKy.signup(name, email, password, days, months, years, firstName, lastName, company, address1, address2, country, state, city, zipcode, mobileNumber)
+//Điền tất cả thông tin trong signup và tạo mới tài khoản
+WebUI.callTestCase(findTestCase('chuan-bi-du-lieu/CBDL_DangKyTaiKhoan'), [('name') : name, ('email') : email, ('password') : password
+		, ('days') : days, ('months') : months, ('years') : years, ('firstName') : firstName, ('lastName') : lastName, ('company') : company, ('address1') : address1
+		, ('address2') : address2, ('country') : country, ('state') : state, ('city') : city, ('zipcode') : zipcode, ('mobileNumber') : mobileNumber])
 
-'Thục hiện các bước thanh toán'
-ThanhToan.pay(comment,  nameOnCard,  cardNumber,  cvc,  expiryMonth, expiryYear)
+
+//Thực hiện các bước thanh toán
+WebUI.callTestCase(findTestCase('chuan-bi-du-lieu/CBDL_ThanhToan'), [('comment') : comment, ('nameOnCard') : nameOnCard, ('cardNumber') : cardNumber
+        , ('cvc') : cvc, ('expiryMonth') : expiryMonth, ('expiryYear') : expiryYear])
 
 'Click nút Download Invoice'
 WebUI.click(findTestObject('dat-hang-va-thanh-toan/aDownloadInvoice'))
 
 'Kiểm tra thông báo hóa đơn được tải xuống thành công'
-HelperKeywords.verifyFileDownloaded("C:\\Users\\DELL\\Downloads", "invoice.txt")
-
-
+assert HelperKeywords.verifyFileDownloadedInProject("/Data Files/download files", "invoice.txt")
 
 'Thực hiện delete account'
 DeleteAccount.accountDelete()
 
 'Click nút Continue'
 WebUI.click(findTestObject('dat-hang-va-thanh-toan/btnContinue'))
-
-''

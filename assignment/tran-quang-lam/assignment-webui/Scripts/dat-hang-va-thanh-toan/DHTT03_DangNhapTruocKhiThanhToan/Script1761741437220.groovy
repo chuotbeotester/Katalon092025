@@ -14,28 +14,29 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable
-import keyword.DangNhap
-import keyword.DeleteAccount
-import keyword.ThanhToan
-import keyword.ThemSanPhamVaoGioHang
-
+import internal.GlobalVariable as GlobalVariable
+import keyword.DangNhap as DangNhap
+import keyword.DeleteAccount as DeleteAccount
+import keyword.ThanhToan as ThanhToan
+import keyword.ThemSanPhamVaoGioHang as ThemSanPhamVaoGioHang
 import org.openqa.selenium.Keys as Keys
 
 'Click nút Signup/Login'
 WebUI.click(findTestObject('dat-hang-va-thanh-toan/btnSignupLogin'))
 
-'Thực hiện đăng nhập'
-DangNhap.signin(email, password)
+//Thực hiện đăng nhập
+WebUI.callTestCase(findTestCase('chuan-bi-du-lieu/CBDL_DangNhapTaiKhoan'), [('email') : email, ('password') : password])
 
 'Thêm sản phẩm vào giỏ hàng'
 ThemSanPhamVaoGioHang.addProductToCart(product)
 
-'Thực hiện thanh toán'
-ThanhToan.pay(comment,  nameOnCard,  cardNumber,  cvc,  expiryMonth, expiryYear)
+//Thực hiện các bước thanh toán
+WebUI.callTestCase(findTestCase('chuan-bi-du-lieu/CBDL_ThanhToan'), [('comment') : comment, ('nameOnCard') : nameOnCard, ('cardNumber') : cardNumber
+        , ('cvc') : cvc, ('expiryMonth') : expiryMonth, ('expiryYear') : expiryYear])
 
 'Thực hiện delete account'
 DeleteAccount.accountDelete()
 
 'Click nút Continue'
 WebUI.click(findTestObject('dat-hang-va-thanh-toan/btnContinue'))
+

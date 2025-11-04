@@ -14,13 +14,12 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable
-import keyword.DangKy
-import keyword.DeleteAccount
-import keyword.HelperKeywords
-import keyword.ThanhToan
-import keyword.ThemSanPhamVaoGioHang
-
+import internal.GlobalVariable as GlobalVariable
+import keyword.DangKy as DangKy
+import keyword.DeleteAccount as DeleteAccount
+import keyword.HelperKeywords as HelperKeywords
+import keyword.ThanhToan as ThanhToan
+import keyword.ThemSanPhamVaoGioHang as ThemSanPhamVaoGioHang
 import org.openqa.selenium.Keys as Keys
 
 'Thêm sản phẩm mới'
@@ -38,48 +37,20 @@ WebUI.click(findTestObject('dat-hang-va-thanh-toan/aProceedToCheckout'))
 'Click nút Register/Login'
 WebUI.click(findTestObject('dat-hang-va-thanh-toan/aRegisterLogin'))
 
-'Điền tất cả thông tin trong signup và tạo mới tài khoản'
-DangKy.signup(name, email, password, days, months, years, firstName, lastName, company, address1, address2, country, state, city, zipcode, mobileNumber)
+//Điền tất cả thông tin trong signup và tạo mới tài khoản
+WebUI.callTestCase(findTestCase('chuan-bi-du-lieu/CBDL_DangKyTaiKhoan'), [('name') : name, ('email') : email, ('password') : password
+        , ('days') : days, ('months') : months, ('years') : years, ('firstName') : firstName, ('lastName') : lastName, ('company') : company
+        , ('address1') : address1, ('address2') : address2, ('country') : country, ('state') : state, ('city') : city, ('zipcode') : zipcode
+        , ('mobileNumber') : mobileNumber])
 
-'Làm các bước để thanh toán'
-ThanhToan.pay(comment,  nameOnCard,  cardNumber,  cvc,  expiryMonth, expiryYear)
+//Thực hiện các bước thanh toán
+WebUI.callTestCase(findTestCase('chuan-bi-du-lieu/CBDL_ThanhToan'), [('comment') : comment, ('nameOnCard') : nameOnCard, ('cardNumber') : cardNumber
+        , ('cvc') : cvc, ('expiryMonth') : expiryMonth, ('expiryYear') : expiryYear])
 
-//'Click nút Cart'
-//WebUI.click(findTestObject('dat-hang-va-thanh-toan/aViewCart'))
-//
-//'Click nút Proceed To Checkout'
-//WebUI.click(findTestObject('dat-hang-va-thanh-toan/aProceedToCheckout'))
-//
-//'Verify Địa chỉ chi tiết và Đánh giá đơn hàng của bạn '
-//HelperKeywords.verifyTextEqual(findTestObject('dat-hang-va-thanh-toan/txtAddressDetails'), "Address Details")
-//HelperKeywords.verifyTextEqual(findTestObject('dat-hang-va-thanh-toan/txtReviewYourOrder'), "Review Your Order")
-//
-//'Nhập miêu tả trong textarea comment'
-//WebUI.setText(findTestObject('dat-hang-va-thanh-toan/textareaComment'), comment)
-//
-//'Click nút place order'
-//WebUI.click(findTestObject('dat-hang-va-thanh-toan/aPlaceOrder'))
-//
-//'Nhập Name on card'
-//WebUI.setText(findTestObject('dat-hang-va-thanh-toan/iptNameOnCard'), nameOnCard)
-//
-//'Nhập Card Number'
-//WebUI.setText(findTestObject('dat-hang-va-thanh-toan/iptCardNumber'), cardNumber)
-//
-//'Nhập CVC'
-//WebUI.setText(findTestObject('dat-hang-va-thanh-toan/iptCvc'), cvc)
-//
-//'Nhập expiration date months'
-//WebUI.setText(findTestObject('dat-hang-va-thanh-toan/iptExpiryMonth'), expiryMonth)
-//
-//'Nhập expiration date years'
-//WebUI.setText(findTestObject('dat-hang-va-thanh-toan/iptExpiryYear'), expiryYear)
-//
-//'Click nút Pay and Confirm Order'
-//WebUI.click(findTestObject('dat-hang-va-thanh-toan/btnPayAndConfirmOrder'))
 
 'Thực hiện delete account'
 DeleteAccount.accountDelete()
 
 'Click nút Continue'
 WebUI.click(findTestObject('dat-hang-va-thanh-toan/btnContinue'))
+

@@ -14,15 +14,16 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
+import internal.GlobalVariable
+import keyword.HelperKeywords
+
 import org.openqa.selenium.Keys as Keys
 
 'Scroll xuống footer'
 WebUI.scrollToElement(findTestObject('tuong-tac-ho-tro-nguoi-dung/footer'), 0)
 
 'Verify Subscription hiển thị thành công'
-String txtSubscription=WebUI.getText(findTestObject('tuong-tac-ho-tro-nguoi-dung/txtSubscription'))
-assert txtSubscription.equals('SUBSCRIPTION')
+HelperKeywords.verifyTextEqual(findTestObject('tuong-tac-ho-tro-nguoi-dung/txtSubscription'), 'SUBSCRIPTION')
 
 'Nhập email'
 WebUI.setText(findTestObject('tuong-tac-ho-tro-nguoi-dung/iptEmailHome'), email)
@@ -31,7 +32,4 @@ WebUI.setText(findTestObject('tuong-tac-ho-tro-nguoi-dung/iptEmailHome'), email)
 WebUI.click(findTestObject('tuong-tac-ho-tro-nguoi-dung/btnSubscribe'))
 
 'Verify You have been successfully subscribed!'
-alertText = WebUI.getAlertText()
-WebUI.verifyMatch(alertText, 'You have been successfully subscribed!', false)
-//String txtSuccess=WebUI.getText(findTestObject('tuong-tac-ho-tro-nguoi-dung/txtSuccessHome'))
-//assert txtSuccess.equals('You have been successfully subscribed!')
+HelperKeywords.verifyTextEqual(findTestObject('tuong-tac-ho-tro-nguoi-dung/txtSuccessHome'), 'You have been successfully subscribed!')

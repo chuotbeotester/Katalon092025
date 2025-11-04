@@ -14,25 +14,28 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
+import internal.GlobalVariable
+import keyword.HelperKeywords
+
+import org.openqa.selenium.Keys
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.WebElement as Keys
 
 'Thêm sản phẩm vào giỏ hàng'
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aProducts'))
-WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aAddToCart',[('product'):1]))
+WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aAddToCart',[('product'):product]))
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/btnContinueShopping'))
 
 'Click nút Cart'
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aViewCart'))
 
 'Verify trang giỏ hàng được hiển thị'
-String txtShoppingCart=WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang/txtShoppingCart'))
-assert txtShoppingCart.equals('Shopping Cart')
+HelperKeywords.verifyTextEqual(findTestObject('quan-ly-san-pham-va-gio-hang/txtShoppingCart'), 'Shopping Cart')
+
 
 'Click nút X tương ứng với sản phẩm cụ thể'
-WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aCartDelete'))
+WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aCartDelete',[('product'):product]))
 
-'Sản phẩm được loại khỏi giỏ hàng'
-txtCartEmpty=WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang/txtCartEmpty'))
-assert txtCartEmpty.equals('Cart is empty!')
+'Verify sản phẩm đã bị loại khỏi giỏ hàng'
+WebUI.verifyElementNotPresent(findTestObject('quan-ly-san-pham-va-gio-hang/aCartDelete', [('product'):product]),5)
 

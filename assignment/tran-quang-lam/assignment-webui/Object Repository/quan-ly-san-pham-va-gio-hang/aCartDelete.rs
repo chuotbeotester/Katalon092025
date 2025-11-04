@@ -6,12 +6,11 @@
    <elementGuidId>04cab6e8-de9f-4ff2-86c4-515b72c723c3</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//tr[contains(@id,'product')]//a[@data-product-id='${product}']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//tr[contains(@id,'product')]//a[@class='cart_quantity_delete']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
