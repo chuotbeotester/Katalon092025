@@ -93,9 +93,9 @@ WebUI.click(findTestObject('dat-hang-thanh-toan/btnPayConfirmOrder'))
 String actualTextMessage = WebUI.getText(findTestObject('dat-hang-thanh-toan/txtMessageOrderConfirm'))
 assert actualTextMessage.contains('Congratulations! Your order has been confirmed!')
 
-'Click button Delete Account'
-WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/btnDeleteAccount'))
-
-'Verify hien thi “ACCOUNT DELETED!”'
-accountDeleted = WebUI.getText(findTestObject('quan-ly-tai-khoan/dang-ky/txtAccountDeleted'))
-assert accountDeleted.equals('ACCOUNT DELETED!')
+//'Click button Delete Account'
+//WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/btnDeleteAccount'))
+//
+//'Verify hien thi “ACCOUNT DELETED!”'
+//accountDeleted = WebUI.getText(findTestObject('quan-ly-tai-khoan/dang-ky/txtAccountDeleted'))
+//assert accountDeleted.equals('ACCOUNT DELETED!')

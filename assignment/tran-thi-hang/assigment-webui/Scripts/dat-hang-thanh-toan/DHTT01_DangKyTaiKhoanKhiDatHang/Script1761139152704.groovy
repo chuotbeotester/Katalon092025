@@ -132,8 +132,7 @@ WebUI.click(findTestObject('dat-hang-thanh-toan/btnCart'))
 WebUI.click(findTestObject('dat-hang-thanh-toan/btn_ProccedCheckout'))
 
 'Xác minh địa chỉ giao hàng và phần xem lại đơn hàng'
-CustomKeywords.'test.AddressDetail.verifyDeliveryAddress'(firstname, lastname, address, city, selectCountry, state, zipcode, 
-    phonenumber)
+CustomKeywords.'test.AddressDetail.verifyDeliveryAddress'(firstname, lastname, address, city, selectCountry, state, zipcode, phonenumber)
 
 //Xem lại tên sản phẩm
 cartProductName = WebUI.getText(findTestObject('dat-hang-thanh-toan/txtSanPhamCart'))
