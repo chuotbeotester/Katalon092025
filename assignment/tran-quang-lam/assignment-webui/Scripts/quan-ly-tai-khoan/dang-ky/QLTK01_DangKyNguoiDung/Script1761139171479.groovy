@@ -14,7 +14,9 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
+import internal.GlobalVariable
+import keyword.HelperKeywords
+
 import org.openqa.selenium.Keys as Keys
 
 'Nhập name Signup '
@@ -27,8 +29,7 @@ WebUI.setText(findTestObject('quan-ly-tai-khoan/dang-ky/iptEmail'), email)
 WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/btnSignup'))
 
 'Verify Enter account information hiển thị'
-String txtEnterAccount=WebUI.getText(findTestObject('quan-ly-tai-khoan/dang-ky/txtEnterAccountInformation'))
-assert txtEnterAccount.equals('ENTER ACCOUNT INFORMATION')
+HelperKeywords.verifyTextContains(findTestObject('quan-ly-tai-khoan/dang-ky/txtEnterAccountInformation'), "ENTER ACCOUNT INFORMATION")
 
 'Chọn title'
 WebUI.check(findTestObject('quan-ly-tai-khoan/dang-ky/iptTitle'))
@@ -93,16 +94,13 @@ WebUI.setText(findTestObject('quan-ly-tai-khoan/dang-ky/iptMobileNumber'), mobil
 WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/btnCreateAccount'))
 
 'Verify ACCOUNT CREATED! hiển thị'
-txtCreatedAccount=WebUI.getText(findTestObject('quan-ly-tai-khoan/dang-ky/txtCreatedAccount'))
-assert txtCreatedAccount.equals("ACCOUNT CREATED!")
+HelperKeywords.verifyTextEqual(findTestObject('quan-ly-tai-khoan/dang-ky/txtCreatedAccount'), "ACCOUNT CREATED!")
 
 'Click nút Continue'
 WebUI.click(findTestObject('quan-ly-tai-khoan/dang-ky/btnContinue'))
 
 'Verify Logged in as username hiển thị'
-String txtLoggedIn=WebUI.getText(findTestObject('quan-ly-tai-khoan/dang-ky/txtLoggedIn'))
-assert txtLoggedIn.contains('Logged in as')
-
+HelperKeywords.verifyTextContains(findTestObject('quan-ly-tai-khoan/dang-ky/txtLoggedIn'), 'Logged in as')
 
 GlobalVariable.email=email
 GlobalVariable.password=password

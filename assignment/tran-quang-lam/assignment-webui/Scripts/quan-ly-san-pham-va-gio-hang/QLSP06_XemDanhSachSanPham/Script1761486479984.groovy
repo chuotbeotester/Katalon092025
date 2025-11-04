@@ -14,7 +14,9 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
+import internal.GlobalVariable
+import keyword.HelperKeywords
+
 import org.openqa.selenium.Keys as Keys
 
 'Danh mục được hiển thị ở phía trái side bar'
@@ -25,16 +27,14 @@ assert txtCategory.equals('CATEGORY')
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aWomen'))
 
 'Click lên danh mục bất kỳ dưới link Women ví dụ:Dress'
-WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aCategoryProducts',[('products'):1]))
+WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aCategoryWomenProducts',[('categorySub'):'Dress']))
 
 'Trang danh mục và text xác nhận WOMEN - TOPS PRODUCTS được hiển thị'
-String txtWomenProducts=WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang/txtWomenProducts'))
-assert txtWomenProducts.contains('WOMEN -  Dress PRODUCTS')
+HelperKeywords.verifyTextEqualLower(findTestObject('quan-ly-san-pham-va-gio-hang/txtWomenProducts'), 'WOMEN -  Dress PRODUCTS')
 
 'Trên phía trái side bar, click lên bất kỳ link danh mục phụ của danh mục Men'
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aMen'))
-WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aCategoryProducts',[('products'):3]))
+WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aCategoryMenProducts',[('category'):'Men', ('categorySub'):'Tshirts']))
 
 'Người dùng được điều hướng đến trang danh mục'
-String txtMenProducts=WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang/txtWomenProducts'))
-assert txtMenProducts.contains('MEN -  Tshirts PRODUCTS')
+HelperKeywords.verifyTextEqualLower(findTestObject('quan-ly-san-pham-va-gio-hang/txtWomenProducts'), 'MEN -  Tshirts PRODUCTS')

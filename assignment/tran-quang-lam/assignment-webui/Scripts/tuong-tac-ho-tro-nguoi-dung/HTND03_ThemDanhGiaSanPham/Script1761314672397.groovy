@@ -14,22 +14,22 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
+import internal.GlobalVariable
+import keyword.HelperKeywords
+
 import org.openqa.selenium.Keys as Keys
 
 'Click vào Products'
 WebUI.click(findTestObject('tuong-tac-ho-tro-nguoi-dung/aProducts'))
 
 'Verify điều hướng đến trang ALL PRODUCTS'
-String txtAllProducts=WebUI.getText(findTestObject('tuong-tac-ho-tro-nguoi-dung/txtAllProducts'))
-assert txtAllProducts.equals('ALL PRODUCTS')
+HelperKeywords.verifyTextEqual(findTestObject('tuong-tac-ho-tro-nguoi-dung/txtAllProducts'), 'ALL PRODUCTS')
 
 'Click nút View Product'
 WebUI.click(findTestObject('tuong-tac-ho-tro-nguoi-dung/aViewProduct',[('product'):product]))
 
 'Verify Write Your Review'
-String txtReview=WebUI.getText(findTestObject('tuong-tac-ho-tro-nguoi-dung/aReviews'))
-assert txtReview.equals('WRITE YOUR REVIEW')
+HelperKeywords.verifyTextEqual(findTestObject('tuong-tac-ho-tro-nguoi-dung/aReviews'), 'WRITE YOUR REVIEW')
 
 'Nhập name'
 WebUI.setText(findTestObject('tuong-tac-ho-tro-nguoi-dung/iptNameProduct'),name)
@@ -44,5 +44,4 @@ WebUI.setText(findTestObject('tuong-tac-ho-tro-nguoi-dung/textareaReview'), revi
 WebUI.click(findTestObject('tuong-tac-ho-tro-nguoi-dung/btnSubmitProduct'))
 
 'Verify Thank you for your review'
-String txtThankYou=WebUI.getText(findTestObject('tuong-tac-ho-tro-nguoi-dung/txtThankYou'))
-assert txtThankYou.equals('Thank you for your review.')
+HelperKeywords.verifyTextEqual(findTestObject('tuong-tac-ho-tro-nguoi-dung/txtThankYou'), 'Thank you for your review.')

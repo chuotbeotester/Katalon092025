@@ -14,15 +14,17 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
+import internal.GlobalVariable
+import keyword.HelperKeywords
+
+import org.openqa.selenium.Keys
+import org.openqa.selenium.WebElement
 
 'Click vào Products'
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aProducts'))
 
 'Verify điều hướng đến trang ALL PRODUCTS'
-String txtAllProducts=WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang/txtAllProducts'))
-assert txtAllProducts.equals('ALL PRODUCTS')
+HelperKeywords.verifyTextEqual(findTestObject('quan-ly-san-pham-va-gio-hang/txtAllProducts'), 'ALL PRODUCTS')
 
 'Nhập tên sản phẩm lên ô input'
 WebUI.setText(findTestObject('quan-ly-san-pham-va-gio-hang/iptSearchProduct'), searchName)
@@ -31,13 +33,7 @@ WebUI.setText(findTestObject('quan-ly-san-pham-va-gio-hang/iptSearchProduct'), s
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/btnSearch'))
 
 'SEARCHED PRODUCTS hiển thị thành công'
-String txtSearchedProducts=WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang/txtSearchedProducts'))
-assert txtSearchedProducts.equals('SEARCHED PRODUCTS')
+HelperKeywords.verifyTextEqual(findTestObject('quan-ly-san-pham-va-gio-hang/txtSearchedProducts'), 'SEARCHED PRODUCTS')
 
 'Các sản phẩm liên quan được hiển thị thành công'
-String productNameList=findTestData('quan-ly-san-pham-va-gio-hang').getValue('productName', 2)
-def  expectedProducts=productNameList.split(',').collect { it.trim() }
-for(String products: expectedProducts) {
-	String txtProductName=WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang/txtSearchProductsName',[('productName'):products]))
-	assert txtProductName.contains(searchName)
-}
+HelperKeywords.verifyAllContainText(findTestObject('quan-ly-san-pham-va-gio-hang/txtNameProducts'), searchName)

@@ -6,12 +6,11 @@
    <elementGuidId>3b149c92-16d3-4e2d-86f7-09a721c9b61b</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//tr[@id='product-${product}']//td[@class='cart_quantity']//button</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//a[@href='/product_details/${product}']/ancestor::td[@class='cart_description']/following-sibling::td[@class='cart_quantity']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

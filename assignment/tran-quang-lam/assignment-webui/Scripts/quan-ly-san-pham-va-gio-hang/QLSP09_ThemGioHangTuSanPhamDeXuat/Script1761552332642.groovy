@@ -14,7 +14,9 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
+import internal.GlobalVariable
+import keyword.HelperKeywords
+
 import org.openqa.selenium.Keys as Keys
 import org.openqa.selenium.WebElement
 
@@ -22,13 +24,13 @@ import org.openqa.selenium.WebElement
 WebUI.scrollToElement(findTestObject('quan-ly-san-pham-va-gio-hang/txtSubscription'), 0)
 
 'RECOMMENDED ITEMS được hiển thị thành công'
-String txtRecommendItems=WebUI.getText(findTestObject('quan-ly-san-pham-va-gio-hang/txtRecommendItems'))
-assert txtRecommendItems.equals('RECOMMENDED ITEMS')
+HelperKeywords.verifyTextEqual(findTestObject('quan-ly-san-pham-va-gio-hang/txtRecommendItems'), 'RECOMMENDED ITEMS')
 
 'Click nút add to cart của sản phẩm đề xuất'
-TestObject addToCartObj = findTestObject('quan-ly-san-pham-va-gio-hang/aAddToCartRecommend', [('product') : product])
-WebElement addToCartElement = WebUI.findWebElement(addToCartObj, 10)
-WebUI.executeJavaScript("arguments[0].click();", Arrays.asList(addToCartElement))
+//TestObject addToCartObj = findTestObject('quan-ly-san-pham-va-gio-hang/aAddToCartRecommend', [('product') : product])
+//WebElement addToCartElement = WebUI.findWebElement(addToCartObj, 10)
+//WebUI.executeJavaScript("arguments[0].click();", Arrays.asList(addToCartElement))
+HelperKeywords.clickJavascript(findTestObject('quan-ly-san-pham-va-gio-hang/aAddToCartRecommend', [('product') : product]))
 
 'Click nút view cart'
 WebUI.click(findTestObject('quan-ly-san-pham-va-gio-hang/aViewCartProducts'))

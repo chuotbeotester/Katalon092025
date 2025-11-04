@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[@href='#Women']</value>
+         <value>//a[normalize-space()='Women']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
