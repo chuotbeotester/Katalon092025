@@ -43,3 +43,31 @@ int itemCount = items.size()
 assert itemCount == 2
 
 
+'Kiểm tra giá cả, số lượng, tổng giá được hiển thị đúng kết quả mong đợi'
+
+sanPham1 = WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtDescription1'))
+assert sanPham1.contains('Blue Top')
+
+price1= WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtPrice1'))
+assert price1.contains('Rs. 500')
+
+quality1= WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtquality1'))
+assert quality1.contains('1')
+
+total1= WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtCardTotal1'))
+assert total1.contains('Rs. 500')
+
+sanPham2 = WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtDescription2'))
+assert sanPham2.contains('Men Tshirt')
+
+price2= WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtPrice2'))
+assert price2.contains('Rs. 400')
+
+quality2= WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtquality2'))
+assert quality2.contains('1')
+
+total2= WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtCardTotal2'))
+assert total2.contains('Rs. 400')
+
+
+

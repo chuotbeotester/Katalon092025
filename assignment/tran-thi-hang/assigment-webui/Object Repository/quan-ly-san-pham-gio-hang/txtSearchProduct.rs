@@ -6,11 +6,11 @@
    <elementGuidId>c85b2f3f-3488-450c-beea-064618937f44</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//h2[@class='title text-center']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//h2[text()='Searched Products']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

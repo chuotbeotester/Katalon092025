@@ -6,11 +6,11 @@
    <elementGuidId>a3eef2dc-f452-4160-95a3-68290e86e15c</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//a[normalize-space()='Cart']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//i[@class='fa fa-shopping-cart']//parent::a</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

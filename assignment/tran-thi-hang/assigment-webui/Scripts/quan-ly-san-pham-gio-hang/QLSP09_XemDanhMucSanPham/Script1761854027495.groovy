@@ -28,8 +28,10 @@ WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/aWomen'))
 WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/aDanhMucDress'))
 
 'Trang danh mục và text xác nhận WOMEN - TOPS PRODUCTS được hiển thị'
-String txtWomenProducts=WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtSanPhamDress'))
-assert txtWomenProducts.contains('WOMEN -  Dress PRODUCTS')
+String txtWomenProducts = WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtSanPhamDress'))
+String normalizedActual = txtWomenProducts.trim().replaceAll("\\s+", " ").toLowerCase()
+assert normalizedActual.equals('WOMEN - DRESS PRODUCTS'.toLowerCase())
+
 
 WebUI.verifyElementVisible(findTestObject('quan-ly-san-pham-gio-hang/listSanPham'))
 
@@ -38,6 +40,6 @@ WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/aMen'))
 WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/aMenTshirt'))
 
 'Người dùng được điều hướng đến trang danh mục'
-WebUI.verifyElementVisible(findTestObject('quan-ly-san-pham-gio-hang/listSanPham'))
-String txtMenProducts=WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtSanPhamDress'))
-assert txtMenProducts.contains('MEN -  Tshirts PRODUCTS')
+String txtMenProducts = WebUI.getText(findTestObject('quan-ly-san-pham-gio-hang/txtSanPhamDress'))
+normalizedActual = txtMenProducts.trim().replaceAll("\\s+", " ").toLowerCase()
+assert normalizedActual.equals('MEN - TSHIRTS PRODUCTS'.toLowerCase())

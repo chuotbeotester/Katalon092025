@@ -35,15 +35,21 @@ public class SearchProduct {
 		}
 	}
 	@Keyword
-	def addButtonCartAll = {
-		// Lấy tất cả nút "Add to cart" hiển thị
+	def addButtonCartAll() {
 		List<WebElement> addButtons = WebUI.findWebElements(findTestObject('dat-hang-thanh-toan/btnAddToCardAllSearch'), 10)
-
-		// Lặp qua từng nút và click
 		for (WebElement btn : addButtons) {
-			WebUI.executeJavaScript("arguments[0].scrollIntoView(true);", Arrays.asList(btn))
-			WebUI.delay(1)
 			WebUI.executeJavaScript("arguments[0].click();", Arrays.asList(btn))
+			WebUI.waitForElementVisible(findTestObject('quan-ly-san-pham-gio-hang/btnContinueShopping'), 5)
+			WebUI.click(findTestObject('quan-ly-san-pham-gio-hang/btnContinueShopping'))
+		}
+	}
+	@Keyword
+	def listViewCart(String searchSanPham) {
+		List<WebElement> cartItems = WebUI.findWebElements(findTestObject('quan-ly-san-pham-gio-hang/ListViewCart'), 10)
+
+		for (WebElement item : cartItems)  {
+			String txtCartDescription = item.getText()
+			assert txtCartDescription.contains(searchSanPham)
 		}
 	}
 }
