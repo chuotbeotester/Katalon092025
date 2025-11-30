@@ -28,7 +28,7 @@
          <id>9c3d299c-0cfc-46f9-b7b9-17f5cbba46b0</id>
          <iterationEntity>
             <iterationType>RANGE</iterationType>
-            <value>1-1</value>
+            <value>2-2</value>
          </iterationEntity>
          <testDataId>Data Files/quan-ly-san-pham-gio-hang</testDataId>
       </testDataLink>
@@ -86,22 +86,22 @@
    <testCaseLink>
       <guid>c09b5913-1a05-4892-aa17-45271219b8b2</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/quan-ly-san-pham-gio-hang/QLSP07_TimKiemSanPhamGioHangDangNhap</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
          <id>aa91a3aa-d177-4598-9e08-359d22ef6944</id>
          <iterationEntity>
             <iterationType>RANGE</iterationType>
-            <value>5-5</value>
+            <value>7-7</value>
          </iterationEntity>
          <testDataId>Data Files/quan-ly-san-pham-gio-hang</testDataId>
       </testDataLink>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
       <variableLink>
-         <testDataLinkId></testDataLinkId>
-         <type>DEFAULT</type>
-         <value></value>
+         <testDataLinkId>aa91a3aa-d177-4598-9e08-359d22ef6944</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>searchSanPham</value>
          <variableId>a47c30cc-a1cf-40bb-b518-4612a20fceba</variableId>
       </variableLink>
       <variableLink>

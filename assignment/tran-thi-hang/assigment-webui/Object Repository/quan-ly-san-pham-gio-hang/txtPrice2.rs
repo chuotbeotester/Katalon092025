@@ -6,12 +6,11 @@
    <elementGuidId>fcf129e2-c24a-412b-be9f-ae319d318e37</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//td[@class='cart_price']//p[normalize-space()='Rs. 500']</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//tr[@id='product-2']//td[@class='cart_price']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

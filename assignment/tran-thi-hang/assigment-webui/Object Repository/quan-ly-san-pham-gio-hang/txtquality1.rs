@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txtMessageOrderConfirm</name>
+   <name>txtquality1</name>
    <tag></tag>
-   <elementGuidId>300bf96c-eaaa-4ada-ad09-1b49ca5c2a0f</elementGuidId>
+   <elementGuidId>c9ed3fa4-4ca3-4251-b28a-5890ddad8b14</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//h2[@data-qa='order-placed']//following-sibling::p</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//tr[@id='product-1']//td[@class='cart_quantity']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

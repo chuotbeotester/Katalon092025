@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txtMessageOrderConfirm</name>
+   <name>txtAccount</name>
    <tag></tag>
-   <elementGuidId>300bf96c-eaaa-4ada-ad09-1b49ca5c2a0f</elementGuidId>
+   <elementGuidId>c05b7d87-1e68-4ed2-b6a4-19e85587c549</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//h2[@data-qa='order-placed']//following-sibling::p</value>
+         <value>//h2[normalize-space()='Enter Account Information']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

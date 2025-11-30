@@ -7,11 +7,11 @@
    <containsHeaders>true</containsHeaders>
    <csvSeperator></csvSeperator>
    <dataFileGUID>37cd5efb-49bb-49bc-a09b-6dd876f47ab7</dataFileGUID>
-   <dataSourceUrl>Data Files/excel-data/dat-hang-thanh-toan.xlsx</dataSourceUrl>
+   <dataSourceUrl>Data Files/excel-data/quan-ly-san-pham-gio-hang.xlsx</dataSourceUrl>
    <driver>ExcelFile</driver>
    <isInternalPath>true</isInternalPath>
    <query></query>
    <secureUserAccount>false</secureUserAccount>
-   <sheetName>dat-hang-thanh-toan</sheetName>
+   <sheetName>quan-ly-san-pham-gio-hang</sheetName>
    <usingGlobalDBSetting>false</usingGlobalDBSetting>
 </DataFileEntity>

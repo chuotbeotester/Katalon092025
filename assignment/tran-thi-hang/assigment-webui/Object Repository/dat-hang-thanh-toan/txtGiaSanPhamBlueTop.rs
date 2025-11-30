@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>txtMessageOrderConfirm</name>
+   <name>txtGiaSanPhamBlueTop</name>
    <tag></tag>
-   <elementGuidId>300bf96c-eaaa-4ada-ad09-1b49ca5c2a0f</elementGuidId>
+   <elementGuidId>55faee11-a8e8-4b11-84a6-f16bb17d480e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//h2[@data-qa='order-placed']//following-sibling::p</value>
+         <value>//div[@class='productinfo text-center']//h2[normalize-space()='Rs. 500']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
